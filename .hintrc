@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off",
+        "label": "off"
+      }
+    ],
+    "apple-touch-icons": "off",
+    "axe/name-role-value": "off",
+    "disown-opener": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-active": "off"
+      }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "no-inline-styles": "off",
+    "axe/aria": [
+      "default",
+      {
+        "aria-progressbar-name": "off"
+      }
+    ]
+  }
+}
