@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
     myFormData.append('image', this.filedata);
     this.http
       .post(
-        'http://localhost/blog/public/api/sample-restful-apis',
+        'http://127.0.0.1:8000/api/addImages',
         myFormData,
         {
           headers: headers,
