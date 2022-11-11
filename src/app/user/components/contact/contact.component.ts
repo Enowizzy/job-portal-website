@@ -8,6 +8,11 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
+  name: string = '';
+  email: string = '';
+  subject: string = '';
+  message: string = '';
+
   ngOnInit(): void {}
 
   filedata: any;
@@ -21,14 +26,14 @@ export class ContactComponent implements OnInit {
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json');
     myFormData.append('image', this.filedata);
+    myFormData.append('name', this.name);
+    myFormData.append('email', this.email);
+    myFormData.append('subject', this.subject);
+    myFormData.append('message', this.message);
     this.http
-      .post(
-        'http://127.0.0.1:8000/api/addImages',
-        myFormData,
-        {
-          headers: headers,
-        }
-      )
+      .post('http://127.0.0.1:8000/api/addImages', myFormData, {
+        headers: headers,
+      })
       .subscribe((data) => {
         console.log(data);
       });
