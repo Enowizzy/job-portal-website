@@ -9,17 +9,21 @@ import { Job } from 'src/app/models/job.model';;
   styleUrls: ['./job-post.component.css']
 })
 export class JobPostComponent implements OnInit {
-  name: string = '';
-  email: string = '';
-  subject: string = '';
+  position: string = '';
+  company: string = '';
+  location: string = '';
   message: string = '';
   job = new Job();
   
   ngOnInit(): void {
   }
   filedata: any;
+  imagedata: any;
   fileEvent(e: any) {
     this.filedata = e.target.files[0];
+  }
+  ImageEvent(e: any) {
+    this.imagedata = e.target.files[0];
   }
   constructor(private http: HttpClient) {}
   onSubmit(f: NgForm) {
@@ -28,9 +32,10 @@ export class JobPostComponent implements OnInit {
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json');
     myFormData.append('pdf', this.filedata);
-    myFormData.append('name', this.name);
-    myFormData.append('email', this.email);
-    myFormData.append('subject', this.subject);
+    myFormData.append('image', this.imagedata);
+    myFormData.append('position', this.position);
+    myFormData.append('company', this.company);
+    myFormData.append('location', this.location);
     myFormData.append('message', this.message);
     this.http
       .post('http://127.0.0.1:8000/api/addJobs', myFormData, {

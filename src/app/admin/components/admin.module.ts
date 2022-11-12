@@ -5,6 +5,7 @@ import { AdminRoutingComponents, AdminRoutingModule } from './admin-routing.modu
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobPostComponent } from './job-post/job-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,10 @@ import { JobPostComponent } from './job-post/job-post.component';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AdminComponent]
