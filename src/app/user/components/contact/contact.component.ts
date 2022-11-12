@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Job } from 'src/app/models/job.model';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,7 @@ export class ContactComponent implements OnInit {
   email: string = '';
   subject: string = '';
   message: string = '';
+  job = new Job();
 
   ngOnInit(): void {}
 

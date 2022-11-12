@@ -21,6 +21,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatSelectModule} from '@angular/material/select'; 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminModule } from './admin/components/admin.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    AdminModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CarouselModule,
