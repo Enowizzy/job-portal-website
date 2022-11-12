@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingComponents, AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { JobPostComponent } from './job-post/job-post.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     DashboardComponent,
-    AdminRoutingComponents
+    AdminRoutingComponents,
+    JobPostComponent
   ],
   imports: [
     CommonModule,
