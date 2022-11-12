@@ -4,6 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HeaderService {
+  visible: boolean;
 
-  constructor() { }
+  constructor() { this.visible = true; }
+
+  hide() { this.visible = false; }
+
+  show() { this.visible = true; }
+
+  toggle() { this.visible = !this.visible; }
+
+  doSomethingElseUseful() { }
 }
