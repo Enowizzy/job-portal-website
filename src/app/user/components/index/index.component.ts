@@ -1,7 +1,18 @@
 import { JobService } from './../../../services/job.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { IJob } from 'src/app/interfaces/job.interface';
+// import { IJob } from 'src/app/interfaces/job.interface';
+
+interface IJob  {
+  id: number,
+  pdf: string,
+  image: string,
+  company: string,
+  message: string,
+  position: string,
+  location: string,
+}
+
 
 @Component({
   selector: 'app-index',
@@ -9,8 +20,8 @@ import { IJob } from 'src/app/interfaces/job.interface';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  // jobs: IJob[] = [];
-  jobs: any;
+  jobs: IJob[] | any;
+  // jobs: any;
   job_list: any;
   indexOptions: OwlOptions = {
     loop: true,
