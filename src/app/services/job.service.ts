@@ -13,12 +13,12 @@ export class JobService {
 
   constructor(private _http: HttpClient) { }
 
-  jobList() {
-    return this._http.get(this.API_URL + 'job-list');
-  }
-
-  // jobList(): Observable<IJob> {
-  //   return this._http.get<IJob>(this.API_URL + 'job-list');
+  // jobList() {
+  //   return this._http.get(this.API_URL + 'job-list');
   // }
+
+  jobList(): Observable<IJob> {
+    return this._http.get<IJob>(this.API_URL + 'job-list');
+  }
 
 }

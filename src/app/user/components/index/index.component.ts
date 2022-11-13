@@ -13,7 +13,6 @@ interface IJob  {
   location: string,
 }
 
-
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -48,7 +47,7 @@ export class IndexComponent implements OnInit {
     },
     nav: true
   }
-  constructor(private job: JobService) { }
+  constructor(private job: JobService) {}
 
  
   ngOnInit(): void {
