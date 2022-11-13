@@ -1,22 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
-import { Job } from 'src/app/models/job.model';;
+import { Job } from 'src/app/models/job.model';
 
 @Component({
   selector: 'app-job-post',
   templateUrl: './job-post.component.html',
-  styleUrls: ['./job-post.component.css']
+  styleUrls: ['./job-post.component.css'],
 })
 export class JobPostComponent implements OnInit {
+  postJob = 'post job';
   position: string = '';
   company: string = '';
   location: string = '';
   message: string = '';
-  job = new Job();
-  
-  ngOnInit(): void {
+  job: Job = {
+    position: '',
+    company: '',
+    location: '',
+    message: '',
+  };
+
+  changeText() {
+    this.postJob = 'Posting Job...';
   }
+
+  ngOnInit(): void {}
   filedata: any;
   imagedata: any;
   fileEvent(e: any) {
@@ -45,5 +54,4 @@ export class JobPostComponent implements OnInit {
         console.log(data);
       });
   }
-
 }

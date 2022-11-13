@@ -1,6 +1,6 @@
 export class Job {
-    name: string = '';
-    email: string = '';
-    subject: string = '';
-    message: string = '';
+  position: string = '';
+  company: string = '';
+  location: string = '';
+  message: string = '';
 }

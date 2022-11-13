@@ -1,5 +1,7 @@
+import { JobService } from './../../../services/job.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { IJob } from 'src/app/interfaces/job.interface';
 
 @Component({
   selector: 'app-index',
@@ -7,6 +9,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+  // jobs: IJob[] = [];
+  jobs: any;
+  job_list: any;
   indexOptions: OwlOptions = {
     loop: true,
     autoplay: true,
@@ -32,9 +37,19 @@ export class IndexComponent implements OnInit {
     },
     nav: true
   }
-  constructor() { }
+  constructor(private job: JobService) { }
 
+ 
   ngOnInit(): void {
+    this.job_list = this.job.jobList();
+    this.getJobList();
+  }
+
+  getJobList(){
+    this.job.jobList().subscribe((res) => {
+      this.jobs = res;
+      console.log(this.jobs);
+    });
   }
 
 }
