@@ -5,8 +5,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 
 interface IJob  {
   id: number,
-  pdf: string,
-  image: string,
+  pdf: any,
+  image: any,
   company: string,
   message: string,
   position: string,
@@ -19,6 +19,7 @@ interface IJob  {
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+  imageDirectoryPath:any = 'http://127.0.0.1:8000/public/jobs/';
   jobs: IJob[] | any;
   // jobs: any;
   job_list: any;
