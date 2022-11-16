@@ -187,7 +187,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-xl-10">
+            <div class="col-xl-10" *ngIf="jobs">
                 <!-- single-job-content -->
                 <div class="single-job-items mb-30" *ngFor="let job of jobs">
                     <div class="job-items">
@@ -212,6 +212,20 @@
                     </div>
                 </div>
               
+            </div>
+            <div class="col-xl-10">
+                <!-- <div class="alert alert-danger" *ngIf="jobs.length <= 0;">
+                    <p><strong>Oops! No jobs posted yet.</strong></p>
+                    <p>A few things might help:</p>
+                    <p>1. Make job post <a routerLink="/" class="alert-link">here</a></p>
+                    <p>2. Server Error</p>
+                </div> -->
+                <div class="alert alert-danger" *ngIf="!jobs">
+                    <p><strong>Oops! No jobs posted yet.</strong></p>
+                    <p>A few things might help:</p>
+                    <p>1. Make job post <a routerLink="/" class="alert-link">here</a></p>
+                    <p>2. Server Error</p>
+                </div>
             </div>
         </div>
     </div>
