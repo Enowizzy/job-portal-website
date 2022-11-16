@@ -8,6 +8,7 @@ import { IndexComponent } from './user/components/index/index.component';
 import { JobDetailsComponent } from './user/components/job-details/job-details.component';
 import { JobListComponent } from './user/components/job-list/job-list.component';
 import { LoginComponent } from './user/components/login/login.component';
+import { PageNotFoundComponent } from './user/components/page-not-found/page-not-found.component';
 import { RegisterComponent } from './user/components/register/register.component';
 import { SingleBlogComponent } from './user/components/single-blog/single-blog.component';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -39,5 +41,6 @@ export const UserRoutingComponents = [
   ElementsComponent,
   JobDetailsComponent,
   SingleBlogComponent,
-  RegisterComponent
+  RegisterComponent,
+  PageNotFoundComponent
 ];
