@@ -19,10 +19,10 @@ interface IJob  {
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  imageDirectoryPath:any = 'http://127.0.0.1:8000/public/jobs/';
   jobs: IJob[] | any;
   // jobs: any;
   job_list: any;
+  job_images: any;
   indexOptions: OwlOptions = {
     loop: true,
     autoplay: true,
@@ -59,7 +59,13 @@ export class IndexComponent implements OnInit {
   getJobList(){
     this.job.jobList().subscribe((res) => {
       this.jobs = res;
-      console.log(this.jobs);
+      // console.log(this.jobs);
+    });
+  }
+  getJobImageList(){
+    this.job.jobImageList().subscribe((res) => {
+      this.job_images = res;
+      console.log(this.job_images);
     });
   }
 
