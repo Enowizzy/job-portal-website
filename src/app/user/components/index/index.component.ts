@@ -23,6 +23,9 @@ export class IndexComponent implements OnInit {
   // jobs: any;
   job_list: any;
   job_images: any;
+  retrievedImage: any;
+  base64Data: any;
+  retrieveResponse: any;
   indexOptions: OwlOptions = {
     loop: true,
     autoplay: true,
@@ -65,7 +68,9 @@ export class IndexComponent implements OnInit {
   getJobImageList(){
     this.job.jobImageList().subscribe((res) => {
       this.job_images = res;
-      console.log(this.job_images);
+      this.base64Data = this.retrieveResponse.picByte;
+      this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+      console.log(this.retrievedImage);
     });
   }
 
