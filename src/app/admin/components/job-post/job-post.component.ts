@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Job } from 'src/app/models/job.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-post',
@@ -34,7 +35,7 @@ export class JobPostComponent implements OnInit {
   ImageEvent(e: any) {
     this.imagedata = e.target.files[0];
   }
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   onSubmit(f: NgForm) {
     var myFormData = new FormData();
     const headers = new HttpHeaders();
@@ -53,5 +54,6 @@ export class JobPostComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
       });
+      this.router.navigate(['/admin/job-list']);
   }
 }
