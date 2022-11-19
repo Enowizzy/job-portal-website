@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { JobListComponent } from './job-list/job-list.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComponent,
     DashboardComponent,
     AdminRoutingComponents,
-    JobPostComponent
+    JobPostComponent,
+    JobListComponent
   ],
   imports: [
     CommonModule,
