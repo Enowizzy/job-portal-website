@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { JobListComponent } from './job-list/job-list.component';
 import { JobPostComponent } from './job-post/job-post.component';
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
         path: 'job-post',
         component: JobPostComponent,
       },
+      {
+        path: 'job-list',
+        component: JobListComponent,
+      },
     ],
   },
 ];
@@ -27,5 +32,8 @@ const routes: Routes = [
 })
 export class AdminRoutingModule {}
 export const AdminRoutingComponents = [
+  AdminComponent,
   DashboardComponent,
+  JobPostComponent,
+  JobListComponent,
 ];
