@@ -16,20 +16,20 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Position</th>
-                                <th>Company</th>
-                                <th>Location</th>
-                                <th>Skills</th>
-                                <th>Status</th>
+                                <th class="text-center">Position</th>
+                                <th class="text-center">Company</th>
+                                <th class="text-center">Location</th>
+                                <th class="text-center">Skills</th>
+                                <th class="text-center">Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let job of jobs">
-                                <td>{{ job.position }}</td>
-                                <td>{{ job.company }}</td>
-                                <td>{{ job.location }}</td>
-                                <td class="text-success"> {{ job.message }}<i class="mdi mdi-arrow-up"></i></td>
-                                <td>
+                                <td class="text-center">{{ job.position }}</td>
+                                <td class="text-center">{{ job.company }}</td>
+                                <td class="text-center">{{ job.location }}</td>
+                                <td class="text-success text-center"> {{ job.message }}<i class="mdi mdi-arrow-up"></i></td>
+                                <td class="text-center">
                                     <label class="badge badge-info">View</label>
                                     <label class="badge badge-warning">Edit</label>
                                     <label class="badge badge-danger">Delete</label>
