@@ -1,7 +1,7 @@
 import { JobService } from './../../../services/job.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { DomSanitizer } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
 // import { IJob } from 'src/app/interfaces/job.interface';
 
 interface IJob  {
@@ -25,6 +25,7 @@ export class IndexComponent implements OnInit {
   job_list: any;
   job_images: any;
   retrievedImage: any;
+  imageDirectory:any =  environment.PUBLIC_URL;
   base64Data: any;
   retrieveResponse: any;
   indexOptions: OwlOptions = {
@@ -52,14 +53,11 @@ export class IndexComponent implements OnInit {
     },
     nav: true
   }
-  constructor(private job: JobService,private sanitizer: DomSanitizer) {}
-
+  constructor(private job: JobService) {}
  
   ngOnInit(): void {
     this.job_list = this.job.jobList();
-    this.job_list = this.job.jobImageList();
     this.getJobList();
-    this.getJobImageList();
   }
 
   getJobList(){
@@ -68,13 +66,6 @@ export class IndexComponent implements OnInit {
       // console.log(this.jobs);
     });
   }
-  getJobImageList(){
-    this.job.jobImageList().subscribe((res:any) => {
-      //alert(JSON.stringify(data.image));
-      let objectURL = 'data:image/jpeg;base64,' + res.image;
-      this.retrievedImage = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-      // console.log(this.retrievedImage);
-    });
-  }
+
 
 }
