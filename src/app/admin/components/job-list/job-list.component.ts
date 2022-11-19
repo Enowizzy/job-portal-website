@@ -19,7 +19,6 @@ interface IJob  {
 export class JobListComponent implements OnInit {
   jobs: IJob[] | any;
   job_list: any;
-  job_images: any;
   imageDirectory:any =  environment.PUBLIC_URL;
   constructor(private job: JobService) { }
 

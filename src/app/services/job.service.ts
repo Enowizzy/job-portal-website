@@ -9,7 +9,6 @@ import { IJob } from '../interfaces/job.interface';
 })
 export class JobService {
   private API_URL = environment.API_URL;
-  job_list:any;
 
   constructor(private _http: HttpClient) { }
 
