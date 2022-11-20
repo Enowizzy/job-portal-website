@@ -5,15 +5,23 @@ import { environment } from 'src/environments/environment';
 import { IJob } from '../interfaces/job.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JobService {
   private API_URL = environment.API_URL;
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {}
 
   jobList(): Observable<IJob> {
     return this._http.get<IJob>(this.API_URL + 'job-list');
   }
-
+  viewJobById(id: number) {
+    return this._http.get(this.API_URL + 'view-job/' + id);
+  }
+  editJobById(id: number) {
+    return this._http.get(this.API_URL + 'edit-job/' + id);
+  }
+  updateJobById(id: number) {
+    return this._http.get(this.API_URL + 'update-job/' + id);
+  }
 }

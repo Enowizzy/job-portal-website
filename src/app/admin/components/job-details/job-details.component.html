@@ -1,0 +1,51 @@
+<div class="content-wrapper">
+    <div class="page-header">
+        <a routerLink="/admin/job-list">
+            <h3 class="badge badge-success page-title"> Back to List</h3>
+        </a>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/admin">Admin</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Job Details</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <p style="text-align: center;">
+                        <a routerLink="/admin/job-list"><img
+                                [src]="jobs.image ? imageDirectory+jobs.image : 'assets/img/icon/job-list1.png'" alt=""
+                                height="200px"></a>
+                    </p>
+                    <p style="text-align: center;">{{ jobs.position }}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="text-align: center;">Job Details</h4>
+                    <div class="row">
+                        <div class="col">
+                            <h5>Location</h5>
+                            <p>{{ jobs.location }}</p>
+                        </div>
+                        <div class="col">
+                            <h5>Company</h5>
+                            <p>{{ jobs.company }}</p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="text-success">{{ jobs.message }}<i class="mdi mdi-arrow-up"></i></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
