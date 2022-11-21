@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './user/components/about/about.component';
+import { AllJobsComponent } from './user/components/all-jobs/all-jobs.component';
 import { BlogComponent } from './user/components/blog/blog.component';
 import { ContactComponent } from './user/components/contact/contact.component';
 import { ElementsComponent } from './user/components/elements/elements.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'job-list', component: JobListComponent },
   { path: 'job-details', component: JobDetailsComponent },
+  { path: 'jobs', component: AllJobsComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'single-blog', component: SingleBlogComponent },
   { path: 'elements', component: ElementsComponent },
@@ -36,6 +38,7 @@ export const UserRoutingComponents = [
   IndexComponent,
   AboutComponent,
   LoginComponent,
+  AllJobsComponent,
   JobListComponent,
   ContactComponent,
   ElementsComponent,
