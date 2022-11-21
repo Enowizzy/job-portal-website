@@ -185,7 +185,6 @@
                     <h2>Featured Jobs</h2>
                 </div>
                 <a routerLink=""><button type="button" class="btn btn-primary btn-lg float-right">View All</button></a>
-
             </div>
         </div>
         <div class="row justify-content-center">
@@ -194,7 +193,9 @@
                 <div class="single-job-items mb-30" *ngFor="let job of jobs">
                     <div class="job-items">
                         <div class="company-img">
-                            <a routerLink="/job-details"><img [src]="job.image ? imageDirectory+job.image : 'assets/img/icon/job-list1.png'" alt="" height="100px"></a>
+                            <a routerLink="/job-details"><img
+                                    [src]="job.image ? imageDirectory+job.image : 'assets/img/icon/job-list1.png'"
+                                    alt="" height="100px"></a>
                         </div>
                         <div class="job-tittle">
                             <a routerLink="/job-details">
@@ -212,7 +213,7 @@
                         <span>7 hours ago</span>
                     </div>
                 </div>
-              
+
             </div>
             <div class="col-xl-10">
                 <div class="alert alert-danger" *ngIf="jobs.length <= 0;">
