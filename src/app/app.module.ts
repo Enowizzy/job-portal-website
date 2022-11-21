@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminModule } from './admin/components/admin.module';
 import { PageNotFoundComponent } from './user/components/page-not-found/page-not-found.component';
+import { AllJobsComponent } from './user/components/all-jobs/all-jobs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { PageNotFoundComponent } from './user/components/page-not-found/page-not
     ContactComponent,
     RegisterComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AllJobsComponent
   ],
   imports: [
     BrowserModule,
