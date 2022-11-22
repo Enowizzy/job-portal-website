@@ -17,6 +17,7 @@ import { JobDetailsComponent } from './job-details/job-details.component';
 import { JobEditComponent } from './job-edit/job-edit.component';
 import { JobUpdateComponent } from './job-update/job-update.component';
 import { JobDeleteComponent } from './job-delete/job-delete.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { JobDeleteComponent } from './job-delete/job-delete.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgxSpinnerModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AdminComponent],
