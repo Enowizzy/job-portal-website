@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { JobService } from 'src/app/services/job.service';
 import { environment } from 'src/environments/environment';
 
@@ -23,6 +24,7 @@ export class JobListComponent implements OnInit {
   constructor(private job: JobService) { }
 
   ngOnInit(): void {
+
     this.job_list = this.job.jobList();
     this.getJobList();
   }
@@ -32,4 +34,6 @@ export class JobListComponent implements OnInit {
       this.jobs = res;
     });
   }
+
+
 }

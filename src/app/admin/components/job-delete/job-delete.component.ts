@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-job-delete',
@@ -7,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobDeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private job: JobService) { }
 
   ngOnInit(): void {
   }
-
 }

@@ -24,4 +24,7 @@ export class JobService {
   updateJobById(id: number) {
     return this._http.get(this.API_URL + 'update-job/' + id);
   }
+  deleteJobById(id: number) {
+    return this._http.delete(this.API_URL + 'delete-job/' + id);
+  }
 }

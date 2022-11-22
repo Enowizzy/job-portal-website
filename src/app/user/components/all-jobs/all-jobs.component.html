@@ -22,29 +22,14 @@
         <div class="row justify-content-center">
             <div class="col-xl-12">
                 <!-- single-job-content -->
-                <div class="single-job-items mb-30">
-                    <div class="job-items">
-                        <div class="company-img">
-                            <a routerLink="/job-details"><img
-                                    src="assets/img/icon/job-list1.png"
-                                    alt="" height="100px"></a>
-                        </div>
-                        <div class="job-tittle">
-                            <a routerLink="/job-details">
-                                <h4> job.position </h4>
-                            </a>
-                            <ul>
-                                <li> job.company </li>
-                                <li><i class="fas fa-map-marker-alt"></i>job.location </li>
-                                <li>Not Disclosed</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="items-link f-right">
-                        <a routerLink="/job-details">Full Time</a>
-                        <span>7 hours ago</span>
-                    </div>
-                </div>
+             
+                        <owl-carousel-o [options]="getAllJobs">
+                            <ng-template carouselSlide>
+                               
+                            </ng-template>
+                        </owl-carousel-o>
+                     
+              
 
             </div>
             <div class="col-xl-10">

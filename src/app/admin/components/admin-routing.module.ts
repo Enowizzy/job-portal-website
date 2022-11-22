@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { JobDeleteComponent } from './job-delete/job-delete.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { JobEditComponent } from './job-edit/job-edit.component';
 import { JobListComponent } from './job-list/job-list.component';
@@ -34,8 +35,12 @@ const routes: Routes = [
         component: JobEditComponent,
       },
       {
-        path: 'job-update',
+        path: 'job-update/:id',
         component: JobUpdateComponent,
+      },
+      {
+        path: 'job-delete/:id',
+        component: JobDeleteComponent,
       },
     ],
   },
@@ -51,5 +56,5 @@ export const AdminRoutingComponents = [
   DashboardComponent,
   JobPostComponent,
   JobListComponent,
-
+  JobDeleteComponent
 ];
