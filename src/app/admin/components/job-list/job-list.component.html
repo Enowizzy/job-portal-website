@@ -31,12 +31,13 @@
                                 <td class="text-success text-center"> {{ job.message }}<i class="mdi mdi-arrow-up"></i>
                                 </td>
                                 <td class="text-center">
-                                    <a routerLink="/admin/job-details/{{ job.id }}"><span title="view" class="badge badge-info"><i
-                                                class="fas fa-eye-slash"></i></span></a>
-                                    <a routerLink="/admin/job-edit/{{ job.id }}"><span title="edit" class="badge badge-warning ml-5"><i
-                                                class="fas fa-edit"></i></span></a>
-                                    <a routerLink="/admin/job-delete/{{ job.id }}"><span title="delete" class="badge badge-danger ml-5"><i
-                                                class="fas fa-trash-alt"></i></span></a>
+                                    <a routerLink="/admin/job-details/{{ job.id }}"><span title="view"
+                                            class="badge badge-info"><i class="fas fa-eye-slash"></i></span></a>
+                                    <a routerLink="/admin/job-edit/{{ job.id }}"><span title="edit"
+                                            class="badge badge-warning ml-5"><i class="fas fa-edit"></i></span></a>
+                                    <button type="button" (click)="deleteJob(job.id)"><span title="delete"
+                                            class="badge badge-danger ml-5"><i
+                                                class="fas fa-trash-alt"></i></span></button>
                                 </td>
                             </tr>
                         </tbody>
