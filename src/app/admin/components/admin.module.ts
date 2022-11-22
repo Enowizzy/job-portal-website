@@ -18,6 +18,7 @@ import { JobEditComponent } from './job-edit/job-edit.component';
 import { JobUpdateComponent } from './job-update/job-update.component';
 import { JobDeleteComponent } from './job-delete/job-delete.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BrowserAnimationsModule,
     HttpClientModule,
     NgxSpinnerModule,
+    ToastrModule.forRoot(),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AdminComponent],
