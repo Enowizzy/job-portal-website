@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -13,10 +14,17 @@ import { environment } from 'src/environments/environment';
 export class JobEditComponent implements OnInit {
   id: any;
   // jobs: any;
+  filedata: any;
+  imagedata: any;
   postJob = 'post job';
   imageDirectory: any = environment.PUBLIC_URL;
   jobs = new Job();
-  constructor(private route: ActivatedRoute, private job: JobService,  private fb: FormBuilder,) {}
+  constructor(
+    private route: ActivatedRoute,
+    private job: JobService,
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) {}
 
   ngForm = this.fb.group({
     position: ['', [Validators.required, Validators.minLength(5)]],
@@ -44,5 +52,23 @@ export class JobEditComponent implements OnInit {
   ImageEvent(event: any) {}
   onSubmit(f: NgForm) {
     console.log(this.jobs);
+    var myFormData = new FormData();
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
+    myFormData.append('pdf', this.filedata);
+    myFormData.append('image', this.imagedata);
+    myFormData.append('data', JSON.stringify(this.jobs));
+    // this.job.updateJobById(this.id,myFormData).subscribe((res:any) => {
+    //   this.jobEditDetails();
+    // })
+
+    this.http
+      .post('http://127.0.0.1:8000/api/update-job/' + this.id, myFormData, {
+        headers: headers,
+      })
+      .subscribe((data: any) => {
+        console.log(data);
+      });
   }
 }
