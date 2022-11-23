@@ -10,6 +10,10 @@
             </div>
             <div class="col-md-4 text-center" *ngIf="jobCats">
                 <h4>Job Categories</h4>
+                <button type="button" class="btn btn-primary">
+                    Profile <span class="badge badge-light">9</span>
+                    <span class="sr-only">unread messages</span>
+                  </button>
                 <div class="section-tittle text-center" *ngFor="let jobCat of jobCats">
                     <span class="btn btn-secondary">{{ jobCat.name }}</span>
                 </div>
