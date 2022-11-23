@@ -24,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminModule } from './admin/components/admin.module';
 import { PageNotFoundComponent } from './user/components/page-not-found/page-not-found.component';
 import { AllJobsComponent } from './user/components/all-jobs/all-jobs.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,13 @@ import { AllJobsComponent } from './user/components/all-jobs/all-jobs.component'
     MatSelectModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      progressBar: true
+    }),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

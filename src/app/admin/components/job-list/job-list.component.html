@@ -35,26 +35,27 @@
                                             class="badge badge-info"><i class="fas fa-eye-slash"></i></span></a>
                                     <a routerLink="/admin/job-edit/{{ job.id }}"><span title="edit"
                                             class="badge badge-warning ml-5"><i class="fas fa-edit"></i></span></a>
-                                    <button type="button" (click)="deleteJob(job.id)"><span title="delete"
-                                            class="badge badge-danger ml-5"><i
-                                                class="fas fa-trash-alt"></i></span></button>
+                                    <span title="delete" class="badge badge-danger ml-5" (click)="deleteJob(job.id)"><i
+                                            class="fas fa-trash-alt"></i></span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="col-xl-10">
-                    <div class="alert alert-danger" *ngIf="jobs.length <= 0;">
-                        <p><strong>Oops! No jobs posted yet.</strong></p>
-                        <p>A few things might help:</p>
-                        <p>1. Make job post <a routerLink="/admin/job-post" class="alert-link">here</a></p>
-                        <p>2. Server Error</p>
-                    </div>
-                    <div class="alert alert-danger" *ngIf="!jobs">
-                        <p><strong>Oops! No jobs posted yet.</strong></p>
-                        <p>A few things might help:</p>
-                        <p>1. Make job post <a routerLink="/admin/job-post" class="alert-link">here</a></p>
-                        <p>2. Server Error</p>
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-xl-10">
+                        <div class="alert alert-danger" *ngIf="jobs.length <= 0;">
+                            <p><strong>Oops! No jobs posted yet.</strong></p>
+                            <p>A few things might help:</p>
+                            <p>1. Make job post <a routerLink="/admin/job-post" class="alert-link">here</a></p>
+                            <p>2. Server Error</p>
+                        </div>
+                        <div class="alert alert-danger" *ngIf="!jobs">
+                            <p><strong>Oops! No jobs posted yet.</strong></p>
+                            <p>A few things might help:</p>
+                            <p>1. Make job post <a routerLink="/admin/job-post" class="alert-link">here</a></p>
+                            <p>2. Server Error</p>
+                        </div>
                     </div>
                 </div>
             </div>

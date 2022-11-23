@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { JobService } from 'src/app/services/job.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -8,6 +9,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./all-jobs.component.css']
 })
 export class AllJobsComponent implements OnInit {
+  jobs: any;
+  job_list: any;
+  jobCats: any;
   imageDirectory:any =  environment.PUBLIC_URL;
   getAllJobs: OwlOptions = {
     loop: true,
@@ -26,7 +30,7 @@ export class AllJobsComponent implements OnInit {
         items: 2
       },
       740: {
-        items: 3
+        items: 2
       },
       940: {
         items: 2
@@ -34,9 +38,22 @@ export class AllJobsComponent implements OnInit {
     },
     nav: true
   }
-  constructor() { }
+  constructor(private job: JobService) { }
 
   ngOnInit(): void {
+    this.job_list = this.job.jobList();
+    this.getJobList();
+    this.getJobCategories();
+  }
+  getJobList() {
+    this.job.jobList().subscribe((res) => {
+      this.jobs = res;
+    });
+  }
+  getJobCategories() {
+    this.job.jobCategories().subscribe((res) => {
+      this.jobCats = res;
+    });
   }
 
 }

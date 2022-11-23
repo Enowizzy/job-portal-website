@@ -5,6 +5,7 @@ import { Job } from 'src/app/models/job.model';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-job-post',
@@ -28,9 +29,12 @@ export class JobPostComponent implements OnInit {
     this.postJob = 'Posting Job...';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getJobList();
+  }
   filedata: any;
   imagedata: any;
+  job_list: any;
   fileEvent(e: any) {
     this.filedata = e.target.files[0];
   }
@@ -41,7 +45,8 @@ export class JobPostComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private spinner: NgxSpinnerService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private jobs: JobService
   ) {}
   onSubmit(f: NgForm) {
     /** spinner starts on init */
@@ -67,7 +72,15 @@ export class JobPostComponent implements OnInit {
 
       this.spinner.hide();
     }, 5000);
-    this.toastr.success('Success', 'Job Posted Successful!');
-    // this.router.navigate(['/admin/job-list']);
+   var success =  this.toastr.success('Job Posted Successful!', 'Success');
+   if (success) {
+    this.router.navigate(['/admin/job-list']);
+   }
+  }
+
+  getJobList() {
+    this.jobs.jobList().subscribe((res) => {
+      this.job_list = res;
+    });
   }
 }

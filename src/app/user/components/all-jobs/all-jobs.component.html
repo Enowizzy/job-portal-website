@@ -8,42 +8,39 @@
                     <h2>Featured Jobs</h2>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="section-tittle text-center">
-                    <h4>Job Categories</h4>
-                    <p>Job Categories</p>
-                    <p>Job Categories</p>
-                    <p>Job Categories</p>
-                    <p>Job Categories</p>
-                    <p>Job Categories</p>
+            <div class="col-md-4 text-center" *ngIf="jobCats">
+                <h4>Job Categories</h4>
+                <div class="section-tittle text-center" *ngFor="let jobCat of jobCats">
+                    <span class="btn btn-secondary">{{ jobCat.name }}</span>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-xl-12">
-                <!-- single-job-content -->
-             
-                        <owl-carousel-o [options]="getAllJobs">
-                            <ng-template carouselSlide>
-                                <div class="container">
-                                    <h2>Stretched Link in Card</h2>
-                                    <p>Add the .stretched-link class to a link inside the card, and it will make the whole card clickable (the card will act as a link):</p>
-                                    <div class="card" style="width:400px">
-                                      <img class="card-img-top" src="assets/img/testmonial/testimonial-founder.png" alt="Card image" style="width:100%">
-                                      <div class="card-body">
-                                        <h4 class="card-title">John Doe</h4>
-                                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                        <a href="#" class="btn btn-primary stretched-link">See Profile</a>
-                                      </div>
-                                    </div>
-                                  </div>
-                            </ng-template>
-                        </owl-carousel-o>
-                     
-              
+            <div class="col-xl-12" *ngIf="jobs">
+                <!-- bootstrap carousel slider -->
+               
+                <!--/ bootstrap carousel slider -->
 
+                <!-- single-job-content -->
+                <owl-carousel-o [options]="getAllJobs">
+                    <ng-template carouselSlide *ngFor="let job of jobs">
+                        <div class="container">
+                            <div class="card" style="width:400px">
+                                <img class="card-img-top" [src]="job.image ? imageDirectory+job.image : 'assets/img/icon/job-list1.png'"
+                                    alt="Card image" style="width:100%" height="300px">
+                                <div class="card-body" style="text-align: center;">
+                                    <h4 class="card-title">{{ job.position }}</h4>
+                                    <p class="card-text">{{ job.message }}</p>
+                                    <a href="#" class="btn btn-primary stretched-link">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+                <!-- End Single-job-content -->
             </div>
-            <div class="col-xl-10">
+
+            <div class="col-xl-10" *ngIf="jobs.length <= 0;">
                 <div class="alert alert-danger">
                     <p><strong>Oops! No jobs posted yet.</strong></p>
                     <p>A few things might help:</p>

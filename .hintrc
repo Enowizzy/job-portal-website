@@ -29,7 +29,8 @@
     "axe/aria": [
       "default",
       {
-        "aria-progressbar-name": "off"
+        "aria-progressbar-name": "off",
+        "aria-input-field-name": "off"
       }
     ],
     "button-type": "off"

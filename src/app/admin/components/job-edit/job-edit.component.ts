@@ -51,7 +51,6 @@ export class JobEditComponent implements OnInit {
   fileEvent(event: any) {}
   ImageEvent(event: any) {}
   onSubmit(f: NgForm) {
-    console.log(this.jobs);
     var myFormData = new FormData();
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
@@ -64,11 +63,11 @@ export class JobEditComponent implements OnInit {
     // })
 
     this.http
-      .post('http://127.0.0.1:8000/api/update-job/' + this.id, myFormData, {
+      .patch('http://127.0.0.1:8000/api/update-job/' + this.id, myFormData, {
         headers: headers,
       })
       .subscribe((data: any) => {
-        console.log(data);
+        console.log(myFormData);
       });
   }
 }
