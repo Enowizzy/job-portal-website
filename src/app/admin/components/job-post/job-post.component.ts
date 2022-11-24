@@ -66,16 +66,16 @@ export class JobPostComponent implements OnInit {
         .post('http://127.0.0.1:8000/api/addJobs', myFormData, {
           headers: headers,
         })
-        .subscribe((data) => {
-          console.log(data);
+        .subscribe((data: any) => {
+          if (data.code == 1) {
+            this.toastr.success('Job Posted Successful!', 'Success');
+            this.getJobList();
+            this.router.navigate(['/admin/job-list']);
+          }
         });
 
       this.spinner.hide();
     }, 5000);
-   var success =  this.toastr.success('Job Posted Successful!', 'Success');
-   if (success) {
-    this.router.navigate(['/admin/job-list']);
-   }
   }
 
   getJobList() {
