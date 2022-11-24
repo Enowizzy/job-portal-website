@@ -25,6 +25,7 @@ import { AdminModule } from './admin/components/admin.module';
 import { PageNotFoundComponent } from './user/components/page-not-found/page-not-found.component';
 import { AllJobsComponent } from './user/components/all-jobs/all-jobs.component';
 import { ToastrModule } from 'ngx-toastr';
+import { LimitPipe } from './pipes/limit.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterComponent,
     LoginComponent,
     PageNotFoundComponent,
-    AllJobsComponent
+    AllJobsComponent,
+    LimitPipe
   ],
   imports: [
     BrowserModule,
