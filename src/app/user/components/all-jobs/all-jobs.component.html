@@ -10,6 +10,25 @@
             </div>
             <div class="col-md-4 text-center" *ngIf="jobCats">
                 <h4>Job Categories</h4>
+                <div class="main">
+  
+                    <!-- Actual search box -->
+                    <div class="form-group has-search">
+                      <span class="fa fa-search form-control-feedback"></span>
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    
+                    <!-- Another variation with a button -->
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search this blog">
+                      <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button">
+                          <i class="fa fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
                 <div class="section-tittle text-center" *ngFor="let jobCat of jobCats">
                     <span class="btn btn-secondary">{{ jobCat.name }}</span>
                 </div>
