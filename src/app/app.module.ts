@@ -45,7 +45,7 @@ import { LimitPipe } from './pipes/limit.pipe';
     LoginComponent,
     PageNotFoundComponent,
     AllJobsComponent,
-    LimitPipe
+    // LimitPipe
   ],
   imports: [
     BrowserModule,

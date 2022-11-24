@@ -28,7 +28,7 @@
                                 <td class="text-center">{{ job.position }}</td>
                                 <td class="text-center">{{ job.company }}</td>
                                 <td class="text-center">{{ job.location }}</td>
-                                <td class="text-success text-center"> {{ job.message }}<i class="mdi mdi-arrow-up"></i>
+                                <td class="text-success text-center"> {{ job.message  | limit : 50}}<i class="mdi mdi-arrow-up"></i>
                                 </td>
                                 <td class="text-center">
                                     <a routerLink="/admin/job-details/{{ job.id }}"><span title="view"

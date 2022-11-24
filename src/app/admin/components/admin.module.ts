@@ -19,6 +19,7 @@ import { JobUpdateComponent } from './job-update/job-update.component';
 import { JobDeleteComponent } from './job-delete/job-delete.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
+import { LimitPipe } from 'src/app/pipes/limit.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ToastrModule } from 'ngx-toastr';
     JobEditComponent,
     JobUpdateComponent,
     JobDeleteComponent,
+    LimitPipe
   ],
   imports: [
     CommonModule,
