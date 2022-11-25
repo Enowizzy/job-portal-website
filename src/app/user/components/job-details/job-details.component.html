@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="hero-cap text-center">
-                        <h2>UI/UX Designer</h2>
+                        <h2>Job Details</h2>
                     </div>
                 </div>
             </div>
@@ -24,9 +24,8 @@
                 <div class="single-job-items mb-50">
                     <div class="job-items">
                         <div class="company-img company-img-details">
-                            <a href="#"><img
-                                    [src]="jobs.image ? imageDirectory+jobs.image : 'assets/img/icon/job-list1.png'"
-                                    alt="" height="100px"></a>
+                            <a><img [src]="jobs.image ? imageDirectory+jobs.image : 'assets/img/icon/job-list1.png'"
+                                    alt="picture" height="100px"></a>
                         </div>
                         <div class="job-tittle">
                             <a href="#">
@@ -87,15 +86,15 @@
                         <h4>Job Overview</h4>
                     </div>
                     <ul>
-                        <li>Posted date : <span>12 Aug 2019</span></li>
-                        <li>Location : <span>New York</span></li>
+                        <li>Posted date : <span>{{ jobs.created_at }}</span></li>
+                        <li>Location : <span>{{ jobs.location }}</span></li>
                         <li>Vacancy : <span>02</span></li>
                         <li>Job nature : <span>Full time</span></li>
-                        <li>Salary : <span>$7,800 yearly</span></li>
+                        <li>Salary : <span>Not Disclosed</span></li>
                         <li>Application date : <span>12 Sep 2020</span></li>
                     </ul>
                     <div class="apply-btn2">
-                        <a routerLink="/admin" class="btn">Apply Now</a>
+                        <a routerLink="/" class="btn">Apply Now</a>
                     </div>
                 </div>
                 <div class="post-details4  mb-50">
