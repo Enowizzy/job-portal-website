@@ -28,7 +28,7 @@
                                     alt="picture" height="100px"></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="#">
+                            <a routerLink="/">
                                 <h4>{{ jobs.position }}</h4>
                             </a>
                             <ul>
@@ -92,6 +92,7 @@
                         <li>Job nature : <span>Full time</span></li>
                         <li>Salary : <span>Not Disclosed</span></li>
                         <li>Application date : <span>12 Sep 2020</span></li>
+                        <li>Pdf : <img [src]="imageDirectory+jobs.pdf" alt="pdf"></li>
                     </ul>
                     <div class="apply-btn2">
                         <a routerLink="/" class="btn">Apply Now</a>
