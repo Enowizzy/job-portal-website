@@ -194,7 +194,7 @@
                 <div class="single-job-items mb-30" *ngFor="let job of jobs">
                     <div class="job-items">
                         <div class="company-img">
-                            <a routerLink="/job-details"><img
+                            <a routerLink="/job-details/{{ job.id }}"><img
                                     [src]="job.image ? imageDirectory+job.image : 'assets/img/icon/job-list1.png'"
                                     alt="" height="100px"></a>
                         </div>
