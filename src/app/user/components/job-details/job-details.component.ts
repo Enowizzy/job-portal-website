@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class JobDetailsComponent implements OnInit {
   imageDirectory:any =  environment.PUBLIC_URL;
-  jobs: IJob[] = [];
+  jobs: any;
   id: any;
 
   constructor(private route: ActivatedRoute,private job: JobService) { }
@@ -24,7 +24,6 @@ export class JobDetailsComponent implements OnInit {
   jobDetails(){
     this.job.viewJobById(this.id).subscribe((res:any) => {
       this.jobs = res;
-      console.log(this.jobs);
     });
   }
 }
