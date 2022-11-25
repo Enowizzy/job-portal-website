@@ -14,18 +14,18 @@ import { RegisterComponent } from './user/components/register/register.component
 import { SingleBlogComponent } from './user/components/single-blog/single-blog.component';
 
 const routes: Routes = [
-  { path: '', component: IndexComponent },
-  { path: 'job-list', component: JobListComponent },
-  { path: 'job-details', component: JobDetailsComponent },
-  { path: 'jobs', component: AllJobsComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'single-blog', component: SingleBlogComponent },
-  { path: 'elements', component: ElementsComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '', component: IndexComponent, title:'Welcome | Job Portal Website' },
+  { path: 'job-list', component: JobListComponent, title:'Job List' },
+  { path: 'job-details/:{id}', component: JobDetailsComponent, title:'Job Details' },
+  { path: 'jobs', component: AllJobsComponent, title:'Job List' },
+  { path: 'blog', component: BlogComponent, title:'Job List' },
+  { path: 'single-blog', component: SingleBlogComponent, title:'Job List' },
+  { path: 'elements', component: ElementsComponent, title:'Elements' },
+  { path: 'about', component: AboutComponent, title:'About' },
+  { path: 'contact', component: ContactComponent, title:'Contact' },
+  { path: 'register', component: RegisterComponent, title:'Register' },
+  { path: 'login', component: LoginComponent, title:'Login' },
+  { path: '**', component: PageNotFoundComponent, title:'404 page' },
 ];
 
 @NgModule({

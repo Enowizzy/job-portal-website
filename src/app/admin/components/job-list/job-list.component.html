@@ -4,7 +4,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a routerLink="/admin">Admin</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Job List</li>
+                <li routerLinkActive="active" class="breadcrumb-item" aria-current="page">Job List</li>
             </ol>
         </nav>
     </div>
@@ -28,7 +28,7 @@
                                 <td class="text-center">{{ job.position }}</td>
                                 <td class="text-center">{{ job.company }}</td>
                                 <td class="text-center">{{ job.location }}</td>
-                                <td class="text-success text-center"> {{ job.message  | limit : 50}}<i class="mdi mdi-arrow-up"></i>
+                                <td class="text-success text-center"> {{ job.message  | limit : 20}}<i class="mdi mdi-arrow-up"></i>
                                 </td>
                                 <td class="text-center">
                                     <a routerLink="/admin/job-details/{{ job.id }}"><span title="view"

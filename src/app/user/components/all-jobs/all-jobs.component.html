@@ -32,11 +32,8 @@
                                     <!-- Select job items start -->
                                     <div class="select-job-items2">
                                         <select name="select">
-                                            <option value="">All Category</option>
-                                            <option value="">Category 1</option>
-                                            <option value="">Category 2</option>
-                                            <option value="">Category 3</option>
-                                            <option value="">Category 4</option>
+                                            <option value="" disabled>Category</option>
+                                            <option value="" *ngFor="let jobCat of jobCats">{{ jobCat.name }}</option>
                                         </select>
                                     </div>
                                     <!--  Select job items End-->
@@ -181,92 +178,55 @@
                                         </div>
                                     </div>
                                     <!-- Count of Job list End -->
-                                    <!-- single-job-content -->
-                                    <div class="single-job-items mb-30">
-                                        <div class="job-items">
-                                            <div class="company-img">
-                                                <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
-                                            </div>
-                                            <div class="job-tittle job-tittle2">
-                                                <a href="#">
-                                                    <h4>Digital Marketer</h4>
-                                                </a>
-                                                <ul>
-                                                    <li>Creative Agency</li>
-                                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                    <li>$3500 - $4000</li>
-                                                </ul>
-                                            </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col" *ngIf="jobs">
+                                            <!-- single-job-content -->
+                                            <owl-carousel-o [options]="getAllJobs">
+                                                <ng-template carouselSlide *ngFor="let job of jobs">
+                                                    <div class="container">
+                                                        <div class="card" style="width:400px">
+                                                            <img class="card-img-top" routerLink="/job-details/{{ job.id }}"
+                                                                [src]="job.image ? imageDirectory+job.image : 'assets/img/icon/job-list1.png'"
+                                                                alt="Card image" style="width:100%" height="300px">
+                                                            <div class="card-body" style="text-align: center;">
+                                                                <h4 class="card-title">{{ job.position }}</h4>
+                                                                <p class="card-text">{{ job.message }}</p>
+                                                                <a routerLink="/job-details/{{ job.id }}" class="btn btn-primary stretched-link">View Job</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </owl-carousel-o>
+                                            <!-- End Single-job-content -->
                                         </div>
-                                        <div class="items-link items-link2 f-right">
-                                            <a routerLink="/job-details">Full Time</a>
-                                            <span>7 hours ago</span>
+                                        <div class="col" *ngIf="jobs">
+                                            <!-- single-job-content -->
+                                            <owl-carousel-o [options]="getAllJobs">
+                                                <ng-template carouselSlide *ngFor="let job of jobs">
+                                                    <div class="container">
+                                                        <div class="card" style="width:400px">
+                                                            <img class="card-img-top" routerLink="/job-details/{{ job.id }}"
+                                                                [src]="job.image ? imageDirectory+job.image : 'assets/img/icon/job-list1.png'"
+                                                                alt="Card image" style="width:100%" height="300px">
+                                                            <div class="card-body" style="text-align: center;">
+                                                                <h4 class="card-title">{{ job.position }}</h4>
+                                                                <p class="card-text">{{ job.message }}</p>
+                                                                <a routerLink="/job-details/{{ job.id }}" class="btn btn-primary stretched-link">View Job</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ng-template>
+                                            </owl-carousel-o>
+                                            <!-- End Single-job-content -->
                                         </div>
-                                    </div>
-                                    <!-- single-job-content -->
-                                    <div class="single-job-items mb-30">
-                                        <div class="job-items">
-                                            <div class="company-img">
-                                                <a href="#"><img src="assets/img/icon/job-list2.png" alt=""></a>
+                            
+                                        <div class="col-xl-10" *ngIf="jobs.length <= 0;">
+                                            <div class="alert alert-danger">
+                                                <p><strong>Oops! No jobs posted yet.</strong></p>
+                                                <p>A few things might help:</p>
+                                                <p>1. Make job post <a routerLink="/" class="alert-link">here</a></p>
+                                                <p>2. Server Error</p>
                                             </div>
-                                            <div class="job-tittle job-tittle2">
-                                                <a href="#">
-                                                    <h4>Digital Marketer</h4>
-                                                </a>
-                                                <ul>
-                                                    <li>Creative Agency</li>
-                                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                    <li>$3500 - $4000</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="items-link items-link2 f-right">
-                                            <a routerLink="/job-details">Full Time</a>
-                                            <span>7 hours ago</span>
-                                        </div>
-                                    </div>
-                                    <!-- single-job-content -->
-                                    <div class="single-job-items mb-30">
-                                        <div class="job-items">
-                                            <div class="company-img">
-                                                <a href="#"><img src="assets/img/icon/job-list3.png" alt=""></a>
-                                            </div>
-                                            <div class="job-tittle job-tittle2">
-                                                <a href="#">
-                                                    <h4>Digital Marketer</h4>
-                                                </a>
-                                                <ul>
-                                                    <li>Creative Agency</li>
-                                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                    <li>$3500 - $4000</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="items-link items-link2 f-right">
-                                            <a routerLink="/job-details">Full Time</a>
-                                            <span>7 hours ago</span>
-                                        </div>
-                                    </div>
-                                    <!-- single-job-content -->
-                                    <div class="single-job-items mb-30">
-                                        <div class="job-items">
-                                            <div class="company-img">
-                                                <a href="#"><img src="assets/img/icon/job-list4.png" alt=""></a>
-                                            </div>
-                                            <div class="job-tittle job-tittle2">
-                                                <a href="#">
-                                                    <h4>Digital Marketer</h4>
-                                                </a>
-                                                <ul>
-                                                    <li>Creative Agency</li>
-                                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                    <li>$3500 - $4000</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="items-link items-link2 f-right">
-                                            <a routerLink="/job-details">Full Time</a>
-                                            <span>7 hours ago</span>
                                         </div>
                                     </div>
                                 </div>
@@ -277,61 +237,6 @@
                 </div>
             </div>
             <!-- Job List Area End -->
-            <div class="col-md-8">
-                <div class="section-tittle text-center">
-                    <h2>Featured Jobs</h2>
-                </div>
-            </div>
-            <div class="col-md-4 text-center" *ngIf="jobCats">
-                <h4>Job Categories</h4>
-                <div class="main">
-
-                    <!-- Variation with a button -->
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Job Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-tittle text-center" *ngFor="let jobCat of jobCats">
-                    <span class="btn btn-secondary">{{ jobCat.name }}</span>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-xl-12" *ngIf="jobs">
-                <!-- single-job-content -->
-                <owl-carousel-o [options]="getAllJobs">
-                    <ng-template carouselSlide *ngFor="let job of jobs">
-                        <div class="container">
-                            <div class="card" style="width:400px">
-                                <img class="card-img-top"
-                                    [src]="job.image ? imageDirectory+job.image : 'assets/img/icon/job-list1.png'"
-                                    alt="Card image" style="width:100%" height="300px">
-                                <div class="card-body" style="text-align: center;">
-                                    <h4 class="card-title">{{ job.position }}</h4>
-                                    <p class="card-text">{{ job.message }}</p>
-                                    <a routerLink="" class="btn btn-primary stretched-link">View Job</a>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-template>
-                </owl-carousel-o>
-                <!-- End Single-job-content -->
-            </div>
-
-            <div class="col-xl-10" *ngIf="jobs.length <= 0;">
-                <div class="alert alert-danger">
-                    <p><strong>Oops! No jobs posted yet.</strong></p>
-                    <p>A few things might help:</p>
-                    <p>1. Make job post <a routerLink="/" class="alert-link">here</a></p>
-                    <p>2. Server Error</p>
-                </div>
-            </div>
         </div>
     </div>
 </section>

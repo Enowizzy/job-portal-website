@@ -12,35 +12,35 @@ import { JobUpdateComponent } from './job-update/job-update.component';
 const routes: Routes = [
   {
     path: 'admin',
-    component: AdminComponent,
+    component: AdminComponent, title:'Admin | Home',
     children: [
       {
         path: '',
-        component: DashboardComponent,
+        component: DashboardComponent, title:'Admin | Dashboard'
       },
       {
         path: 'job-post',
-        component: JobPostComponent,
+        component: JobPostComponent, title:'Admin | Job Post'
       },
       {
         path: 'job-list',
-        component: JobListComponent,
+        component: JobListComponent, title:'Admin | Job List'
       },
       {
         path: 'job-details/:id',
-        component: JobDetailsComponent,
+        component: JobDetailsComponent, title:'Admin | Job Details'
       },
       {
         path: 'job-edit/:id',
-        component: JobEditComponent,
+        component: JobEditComponent, title:'Admin | Job Edit'
       },
       {
         path: 'job-update/:id',
-        component: JobUpdateComponent,
+        component: JobUpdateComponent, title:'Admin | Job Update'
       },
       {
         path: 'job-delete/:id',
-        component: JobDeleteComponent,
+        component: JobDeleteComponent, title:'Admin | Job Delete'
       },
     ],
   },

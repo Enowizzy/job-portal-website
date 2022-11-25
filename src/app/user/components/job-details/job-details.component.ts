@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-job-details',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,private job: JobService) { }
 
   ngOnInit(): void {
   }

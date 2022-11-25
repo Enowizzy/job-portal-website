@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -24,8 +24,8 @@ export class JobService {
   editJobById(id: number) {
     return this._http.get(this.API_URL + 'edit-job/' + id);
   }
-  updateJobById(id: number) {
-    return this._http.get(this.API_URL + 'update-job/' + id);
+  updateJobById(id: number, data:any) {
+    return this._http.patch(this.API_URL + 'update-job/' + id,data);
   }
   deleteJobById(id: number) {
     return this._http.delete(this.API_URL + 'delete-job/' + id);
