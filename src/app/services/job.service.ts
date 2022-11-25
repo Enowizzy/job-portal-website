@@ -18,8 +18,8 @@ export class JobService {
   jobCategories(): Observable<any> {
     return this._http.get(this.API_URL + 'job-categories');
   }
-  viewJobById(id: number) {
-    return this._http.get(this.API_URL + 'view-job/' + id);
+  viewJobById(id: number): Observable<IJob[]> {
+    return this._http.get<IJob[]>(this.API_URL + 'view-job/' + id);
   }
   editJobById(id: number) {
     return this._http.get(this.API_URL + 'edit-job/' + id);

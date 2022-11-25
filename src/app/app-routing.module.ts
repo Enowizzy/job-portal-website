@@ -16,7 +16,7 @@ import { SingleBlogComponent } from './user/components/single-blog/single-blog.c
 const routes: Routes = [
   { path: '', component: IndexComponent, title:'Welcome | Job Portal Website' },
   { path: 'job-list', component: JobListComponent, title:'Job List' },
-  { path: 'job-details/:{id}', component: JobDetailsComponent, title:'Job Details' },
+  { path: 'job-details/:id', component: JobDetailsComponent, title:'Job Details' },
   { path: 'jobs', component: AllJobsComponent, title:'Job List' },
   { path: 'blog', component: BlogComponent, title:'Job List' },
   { path: 'single-blog', component: SingleBlogComponent, title:'Job List' },
