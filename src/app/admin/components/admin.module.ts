@@ -20,6 +20,7 @@ import { JobDeleteComponent } from './job-delete/job-delete.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { LimitPipe } from 'src/app/pipes/limit.pipe';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LimitPipe } from 'src/app/pipes/limit.pipe';
     BrowserAnimationsModule,
     HttpClientModule,
     NgxSpinnerModule,
+    MatDatepickerModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-top-right',
