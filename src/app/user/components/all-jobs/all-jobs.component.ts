@@ -21,7 +21,7 @@ export class AllJobsComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 300,
-    navText: ['<', '>'],
+    navText: ['<i class="fas fa-arrow-alt-circle-left"></i>', '<i class="fas fa-arrow-alt-circle-right"></i>'],
     responsive: {
       0: {
         items: 1
