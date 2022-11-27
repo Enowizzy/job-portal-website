@@ -55,7 +55,7 @@ export class IndexComponent implements OnInit {
   }
 
   getJobList(){
-    this.job.jobList().subscribe((res) => {
+    this.job.latestJobList().subscribe((res) => {
       this.jobs = res;
     });
   }
