@@ -3,3 +3,29 @@
 .nav-item a.active {
     color: rebeccapurple;
 }
+
+.container .owl-next, .container .owl-prev{
+    background: rgba(158, 158, 158/28%)!important;
+    color: #222!important;
+    height: 60px!important;
+    width: 60px!important;
+    border-radius: 50%!important;
+    position: relative;
+    top: 50%;
+}
+.container .owl-next{
+   left: -68px;
+   transform: translate(-50%, -50%);
+}
+.container .owl-prev{
+    left: -8px;
+   transform: translate(-50%, -50%);
+}
+.container .owl-next i, .container .owl-prev i{
+   font-size: 28px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin-top: 55%;
+   margin-right: 50%;
+}
