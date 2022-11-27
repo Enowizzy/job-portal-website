@@ -38,82 +38,98 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col"> <div class="form-group row">
-                                <label for="exampleInputMobile" class="col-sm-3 col-form-label">Location</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="location" [(ngModel)]="location"
-                                        id="exampleInputMobile" placeholder="Job Location" minlength="3" maxlength="50"
-                                        required>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Location</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="location" [(ngModel)]="location"
+                                            id="exampleInputMobile" placeholder="Job Location" minlength="3"
+                                            maxlength="50" required>
+                                    </div>
                                 </div>
-                            </div></div>
-                            <div class="col"> <div class="form-group row">
-                                <label for="exampleInputMobilelink" class="col-sm-3 col-form-label">Job Link</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="location" [(ngModel)]="location"
-                                        id="exampleInputMobilelink" placeholder="Job Link" minlength="3" maxlength="50"
-                                        required>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="exampleInputMobilelink" class="col-sm-3 col-form-label">Job Link</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="location" [(ngModel)]="job_link"
+                                            id="exampleInputMobilelink" placeholder="Job Link" minlength="3"
+                                            maxlength="150" required>
+                                    </div>
                                 </div>
-                            </div></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col"> <div class="form-group row">
-                                <label for="exampleInputNature" class="col-sm-3 col-form-label">Job Nature</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="location" [(ngModel)]="location"
-                                        id="exampleInputNature" placeholder="Job Location" minlength="3" maxlength="50"
-                                        required>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="exampleInputNature" class="col-sm-3 col-form-label">Job Nature</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="location" [(ngModel)]="job_nature"
+                                            id="exampleInputNature" placeholder="Job Location" minlength="3"
+                                            maxlength="50" required>
+                                    </div>
                                 </div>
-                            </div></div>
-                            <div class="col"> <div class="form-group row">
-                                <label for="exampleInputDate" class="col-sm-3 col-form-label">End Date</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="location" [(ngModel)]="location"
-                                        id="exampleInputDate" placeholder="Job Link" minlength="3" maxlength="50"
-                                        required>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="exampleInputDate" class="col-sm-3 col-form-label">End Date</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="location" [(ngModel)]="end_date"
+                                            id="exampleInputDate" placeholder="Job Link" minlength="3" maxlength="50"
+                                            required>
+                                    </div>
                                 </div>
-                            </div></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col"> <div class="form-group row">
-                                <label for="exampleInputEdu" class="col-sm-3 col-form-label">Edu + Exp</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="location" [(ngModel)]="location"
-                                        id="exampleInputEdu" placeholder="Job Location" minlength="3" maxlength="50"
-                                        required>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="exampleInputEdu" class="col-sm-3 col-form-label">Edu + Exp</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="location" [(ngModel)]="edu_exp"
+                                            id="exampleInputEdu" placeholder="Job Location" minlength="3" maxlength="50"
+                                            required>
+                                    </div>
                                 </div>
-                            </div></div>
-                            <div class="col"> <div class="form-group row">
-                                <label for="exampleInputVac" class="col-sm-3 col-form-label">Vacancy</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="location" [(ngModel)]="location"
-                                        id="exampleInputVac" placeholder="Job Link" minlength="3" maxlength="50"
-                                        required>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="exampleInputVac" class="col-sm-3 col-form-label">Vacancy</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="location" [(ngModel)]="vacancy"
+                                            id="exampleInputVac" placeholder="Job Link" minlength="3" maxlength="50"
+                                            required>
+                                    </div>
                                 </div>
-                            </div></div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col">  <div class="form-group row">
-                                <label for="exampleInputMobile1" class="col-sm-3 col-form-label">Pdf</label>
-                                <div class="col-sm-9">
-                                    <input type="file" accept=".pdf" name="myFile" (change)="fileEvent($event)"
-                                        class="form-control" id="exampleInputMobile1" placeholder="Pdf">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="exampleInputMobile1" class="col-sm-3 col-form-label">Pdf</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" accept=".pdf" name="myFile" (change)="fileEvent($event)"
+                                            class="form-control" id="exampleInputMobile1" placeholder="Pdf">
+                                    </div>
                                 </div>
-                            </div></div>
-                            <div class="col"><div class="form-group row">
-                                <label for="exampleInputMobile2" class="col-sm-3 col-form-label">Image</label>
-                                <div class="col-sm-9">
-                                    <input type="file" accept=".png, .jpg, .jpeg" class="form-control"
-                                        (change)="ImageEvent($event)" id="exampleInputMobile2" placeholder="Image">
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label for="exampleInputMobile2" class="col-sm-3 col-form-label">Image</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" accept=".png, .jpg, .jpeg" class="form-control"
+                                            (change)="ImageEvent($event)" id="exampleInputMobile2" placeholder="Image">
+                                    </div>
                                 </div>
-                            </div></div>
+                            </div>
                         </div>
                         <div class="form-group row">
                             <label for="exampleTextarea" class="col-sm-3 col-form-label">Skills</label>
                             <textarea class="form-control" id="exampleTextarea" name="message" [(ngModel)]="message"
-                                rows="4" minlength="20" maxlength="50" required></textarea>
+                                rows="4" minlength="20" maxlength="250" required></textarea>
                         </div>
-                        <button type="submit" (click)="changeText()"
-                            class="btn btn-gradient-primary me-2 float-end">{{ postJob }}</button>
+                        <button type="submit" (click)="changeText()" class="btn btn-gradient-primary me-2 float-end">{{
+                            postJob }}</button>
                     </form>
                 </div>
             </div>

@@ -18,6 +18,11 @@ export class JobPostComponent implements OnInit {
   company: string = '';
   location: string = '';
   message: string = '';
+  job_link: string = '';
+  job_nature: string = '';
+  end_date: string = '';
+  edu_exp: string = '';
+  vacancy: string = '';
   job: Job = {
     position: '',
     company: '',
@@ -62,6 +67,11 @@ export class JobPostComponent implements OnInit {
       myFormData.append('company', this.company);
       myFormData.append('location', this.location);
       myFormData.append('message', this.message);
+      myFormData.append('job_link', this.job_link);
+      myFormData.append('job_nature', this.job_nature);
+      myFormData.append('end_date', this.end_date);
+      myFormData.append('edu_exp', this.edu_exp);
+      myFormData.append('vacancy', this.vacancy);
       this.http
         .post('http://127.0.0.1:8000/api/addJobs', myFormData, {
           headers: headers,
