@@ -85,7 +85,7 @@ export class JobPostComponent implements OnInit {
         });
 
       this.spinner.hide();
-    }, 5000);
+    }, 3000);
   }
 
   getJobList() {
