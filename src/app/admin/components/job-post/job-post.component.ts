@@ -83,9 +83,9 @@ export class JobPostComponent implements OnInit {
             this.router.navigate(['/admin/job-list']);
           }
         });
-
       this.spinner.hide();
     }, 3000);
+    f.resetForm();
   }
 
   getJobList() {
