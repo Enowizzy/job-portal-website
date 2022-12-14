@@ -130,7 +130,8 @@
                         </div>
                         <button type="submit" (click)="changeText()" class="btn btn-gradient-primary me-2 float-end">{{
                             postJob }}</button>
-                        <button type="button" class="btn btn-gradient-primary me-2">Clear</button>
+                        <button type="button" (click)="onSubmit(f); f.resetForm()"
+                            class="btn btn-gradient-primary me-2">Clear</button>
                     </form>
                 </div>
             </div>
