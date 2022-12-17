@@ -17,17 +17,12 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  filedata: any;
-  fileEvent(e: any) {
-    this.filedata = e.target.files[0];
-  }
   constructor(private http: HttpClient) {}
   onSubmit(f: NgForm) {
     var myFormData = new FormData();
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json');
-    myFormData.append('pdf', this.filedata);
     myFormData.append('name', this.name);
     myFormData.append('email', this.email);
     myFormData.append('subject', this.subject);

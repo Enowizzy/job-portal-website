@@ -25,13 +25,7 @@
                 <form class="form-contact contact_form" #f="ngForm" (ngSubmit)="onSubmit(f)" id="contactForm"
                     novalidate="novalidate">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <textarea class="form-control w-100" name="message" [(ngModel)]="message" id="message" cols="30" rows="9"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
-                                    placeholder=" Enter Message"></textarea>
-                            </div>
-                        </div>
+                    
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <input class="form-control valid" name="name" [(ngModel)]="name" id="name" type="text"
@@ -46,11 +40,6 @@
                                     placeholder="Email">
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <input type="file" name="myFile" (change)="fileEvent($event)" />
-                            </div>
-                        </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <input class="form-control" name="subject" [(ngModel)]="subject" id="subject" type="text"
@@ -58,9 +47,16 @@
                                     placeholder="Enter Subject">
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <textarea class="form-control w-100" name="message" [(ngModel)]="message" id="message" cols="30" rows="9"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
+                                    placeholder=" Enter Message"></textarea>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group mt-3">
-                        <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                        <button type="submit" class="button button-contactForm boxed-btn float-end">Send</button>
                     </div>
                 </form>
             </div>
