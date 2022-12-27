@@ -29,6 +29,7 @@ export class JobPostComponent implements OnInit {
     location: '',
     message: '',
   };
+  imageURL: string = '';
 
   changeText() {
     this.postJob = 'Posting Job...';
@@ -45,6 +46,12 @@ export class JobPostComponent implements OnInit {
   }
   ImageEvent(e: any) {
     this.imagedata = e.target.files[0];
+     //Todo File Preview
+     const reader = new FileReader();
+     reader.onload = () => {
+       this.imageURL = reader.result as string;
+     }
+     reader.readAsDataURL(this.imagedata)
   }
   constructor(
     private http: HttpClient,

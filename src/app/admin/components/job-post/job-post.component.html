@@ -122,6 +122,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Image Preview -->
+                            <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
+                                <img [src]="imageURL" [alt]="f.value.name" style="height: 100px; width: 100px;">
+                            </div>
+                            <!-- Assign Image Alt -->
                         </div>
                         <div class="form-group row">
                             <label for="exampleTextarea" class="col-sm-3 col-form-label">Skills</label>
