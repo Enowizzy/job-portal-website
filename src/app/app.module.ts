@@ -26,6 +26,7 @@ import { PageNotFoundComponent } from './user/components/page-not-found/page-not
 import { AllJobsComponent } from './user/components/all-jobs/all-jobs.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LimitPipe } from './pipes/limit.pipe';
+import { JobFilterPipe } from './pipes/job-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { LimitPipe } from './pipes/limit.pipe';
     LoginComponent,
     PageNotFoundComponent,
     AllJobsComponent,
+    JobFilterPipe,
     // LimitPipe
   ],
   imports: [

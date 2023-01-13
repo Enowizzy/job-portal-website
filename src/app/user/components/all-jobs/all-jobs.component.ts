@@ -6,13 +6,14 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-all-jobs',
   templateUrl: './all-jobs.component.html',
-  styleUrls: ['./all-jobs.component.css']
+  styleUrls: ['./all-jobs.component.css'],
 })
 export class AllJobsComponent implements OnInit {
   jobs: any;
   job_list: any;
   jobCats: any;
-  imageDirectory:any =  environment.PUBLIC_URL;
+  searchText: string = '';
+  imageDirectory: any = environment.PUBLIC_URL;
   getAllJobs: OwlOptions = {
     loop: true,
     autoplay: true,
@@ -21,24 +22,27 @@ export class AllJobsComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 300,
-    navText: ['<i class="fas fa-arrow-alt-circle-left"></i>', '<i class="fas fa-arrow-alt-circle-right"></i>'],
+    navText: [
+      '<i class="fas fa-arrow-alt-circle-left"></i>',
+      '<i class="fas fa-arrow-alt-circle-right"></i>',
+    ],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
-        items: 2
+        items: 2,
       },
       740: {
-        items: 2
+        items: 2,
       },
       940: {
-        items: 2
-      }
+        items: 2,
+      },
     },
-    nav: true
-  }
-  constructor(private job: JobService) { }
+    nav: true,
+  };
+  constructor(private job: JobService) {}
 
   ngOnInit(): void {
     this.job_list = this.job.jobList();
@@ -55,5 +59,4 @@ export class AllJobsComponent implements OnInit {
       this.jobCats = res;
     });
   }
-
 }

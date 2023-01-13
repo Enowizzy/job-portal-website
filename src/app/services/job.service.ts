@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaderResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaderResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IJob } from '../interfaces/job.interface';
 
@@ -12,8 +12,13 @@ export class JobService {
 
   constructor(private _http: HttpClient) {}
 
+  handleError(error: HttpErrorResponse) {
+    console.log(error);
+    return throwError(() => error);
+  }
+  
   jobList(): Observable<IJob> {
-    return this._http.get<IJob>(this.API_URL + 'job-list');
+    return this._http.get<IJob>(this.API_URL + 'job-list').pipe(catchError(this.handleError));
   }
   latestJobList(): Observable<IJob> {
     return this._http.get<IJob>(this.API_URL + 'latest-list');
