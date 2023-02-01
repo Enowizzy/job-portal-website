@@ -51,7 +51,7 @@ export class AllJobsComponent implements OnInit {
     this.getJobCategories();
   }
   getJobList() {
-    this.job.jobList().subscribe((res) => {
+    this.job.jobList().subscribe((res: IJob[]) => {
       this.jobs = res;
     });
   }
