@@ -23,8 +23,8 @@ export class JobService {
   public jobList(): Observable<IJob[]> {
     return this._http.get<IJob[]>(this.API_URL + 'job-list').pipe(catchError(this.handleError));
 }
-  latestJobList(): Observable<IJob> {
-    return this._http.get<IJob>(this.API_URL + 'latest-list');
+  latestJobList(): Observable<IJob[]> {
+    return this._http.get<IJob[]>(this.API_URL + 'latest-list');
   }
   jobCategories(): Observable<any> {
     return this._http.get(this.API_URL + 'job-categories');
