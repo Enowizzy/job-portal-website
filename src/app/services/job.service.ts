@@ -17,9 +17,12 @@ export class JobService {
     return throwError(() => error);
   }
   
-  jobList(): Observable<IJob> {
-    return this._http.get<IJob>(this.API_URL + 'job-list').pipe(catchError(this.handleError));
-  }
+  // jobList(): Observable<IJob> {
+  //   return this._http.get<IJob>(this.API_URL + 'job-list').pipe(catchError(this.handleError));
+  // }
+  public jobList(): Observable<IJob[]> {
+    return this._http.get<IJob[]>(this.API_URL + 'job-list').pipe(catchError(this.handleError));
+}
   latestJobList(): Observable<IJob> {
     return this._http.get<IJob>(this.API_URL + 'latest-list');
   }

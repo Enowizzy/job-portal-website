@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { IJob } from 'src/app/interfaces/job.interface';
 import { JobService } from 'src/app/services/job.service';
 import { environment } from 'src/environments/environment';
 
@@ -9,7 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./all-jobs.component.css'],
 })
 export class AllJobsComponent implements OnInit {
-  jobs: any;
+  jobs: IJob[] = [];
   job_list: any;
   jobCats: any;
   searchText: string = '';
