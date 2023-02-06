@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./all-jobs.component.css'],
 })
 export class AllJobsComponent implements OnInit {
-  jobs: IJob[] = [];
+  jobs: any;
   job_list: any;
   jobCats: any;
   searchText: string = '';
